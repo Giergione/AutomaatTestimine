@@ -10,7 +10,7 @@ public class AutomatedTest1 {
 
     public List<String> getCoordinates() {
         ArrayList<String> coordinates = new ArrayList<>(2);
-        coordinates.add(0, "12.34.56");
+        coordinates.add(0, "13.34.56");
         coordinates.add(1, "65.43.21");
         return coordinates;
     }
