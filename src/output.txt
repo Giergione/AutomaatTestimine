@@ -1,0 +1,5 @@
+City name: Washington
+Current temperature: 274.51
+3 day forecast min: 270.551
+3 day forecast max: 279.713
+Country code: 274.51
