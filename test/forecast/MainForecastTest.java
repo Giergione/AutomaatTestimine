@@ -1,3 +1,4 @@
+package forecast;
 
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
@@ -62,7 +63,6 @@ public class MainForecastTest {
         }
     }
 
-
     @Test
     void testIfForecastDataFromEstonia () {
         try {
@@ -86,6 +86,36 @@ public class MainForecastTest {
         try {
             Forecast automatedTest2 = new Forecast("Toronto");
             assertTrue(automatedTest2.getCurrentCountryCode().equals("CA"));
+        } catch (Exception e) {
+            fail("Failure cause: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void testIfForecastMinimumsHaveThreeValues () {
+        try {
+            Forecast automatedTest2 = new Forecast("Toronto");
+            assertTrue(automatedTest2.findThreeDayMinimums().size() == 3);
+        } catch (Exception e) {
+            fail("Failure cause: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void testIfForecastMaximumsHaveThreeValues () {
+        try {
+            Forecast automatedTest2 = new Forecast("Toronto");
+            assertTrue(automatedTest2.findThreeDayMaximums().size() == 3);
+        } catch (Exception e) {
+            fail("Failure cause: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void testIfForecastMinimumsAreLowerThanMaximums () {
+        try {
+            Forecast automatedTest2 = new Forecast("Toronto");
+            assertTrue(automatedTest2.findThreeDayMinimums().get(2) < automatedTest2.findThreeDayMaximums().get(2));
         } catch (Exception e) {
             fail("Failure cause: " + e.getMessage());
         }
